@@ -1,0 +1,24 @@
+# -*- mode: snippet -*-
+# name: default
+# key: ,ox.tp
+# group: ox.tex.pub
+# --
+#+LATEX_CLASS_OPTIONS: [12pt, dvipsnames]
+
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[inline]{enumitem}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage[backend=biber]{biblatex}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage{geometry}
+
+#+LATEX_HEADER: \usepackage[font=small,labelfont=bf]{caption}
+#+LATEX_HEADER: \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=basictext,factor=1100,stretch=10,shrink=10]{microtype}
+
+#+LATEX_HEADER: \addbibresource{~/.local/data/bibliography/refdb.bib}
+
+* Abstract                                                         :ignore:
+
+* References                                                         :ignore:
+
+#+LaTeX: \printbibliography

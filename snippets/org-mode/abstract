@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: abstract
+# key: ,ox.a
+# group: ox
+# --
+#+begin_abstract
+$0
+#+end_abstract

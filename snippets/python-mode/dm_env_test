@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: dm_env test
+# key: dm_env.test
+# --
+"""Evironment Tests."""
+
+import dm_env.specs as specs
+import dm_env.test_utils as test_utils
+
+from google3.testing.pybase import googletest
+
+
+class HideAndSeekEnvTest(test_utils.EnvironmentTestMixin, googletest.TestCase):
+
+  def make_object_under_test(self):
+    # (TODO) create and return the env here
+    return hide_and_seek_env.builder(**config)
+
+  def test_foo(self):
+    # the created environment is available in the following variable
+    self.environment
+
+
+if __name__ == '__main__':
+  googletest.main()

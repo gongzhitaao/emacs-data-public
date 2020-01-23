@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: load
+# key: load
+# --
+load(
+    "//devtools/python/blaze:pytype.bzl",
+    "pytype_strict_binary",
+    "pytype_strict_library",
+)
+load("//devtools/python/blaze:strict.bzl", "py_strict_test")

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: date
+# key: ,m.d
+# group: meta
+# --
+#+DATE: $0

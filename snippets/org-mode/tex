@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Inline TeX macro
+# key: ,ox.tex
+# group: ox.tex
+# --
+#+MACRO: tex @@latex:\$1@@$0

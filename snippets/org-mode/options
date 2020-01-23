@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: option
+# key: ,m.o
+# group: meta
+# --
+#+OPTIONS: $0

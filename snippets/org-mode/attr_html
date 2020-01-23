@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: attr_html
+# key: ,ox.ha
+# group: ox.html
+# --
+#+ATTR_HTML: $0

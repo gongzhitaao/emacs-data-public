@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: macro
+# key: ,ox.m
+# group: ox
+# --
+#+MACRO: $0

@@ -1,0 +1,50 @@
+# -*- mode: snippet -*-
+# name: IEEEtran
+# key: ,ox.t.ieeetran
+# group: ox.tex.pub
+# --
+#+OPTIONS: toc:nil num:t ^:{} author:nil title:nil date:nil
+
+#+LATEX_CLASS: IEEEtran
+#+LATEX_CLASS_OPTIONS: [conference,letter,10pt,final,dvipsnames]
+
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[inline]{enumitem}
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \usepackage[backend=biber]{biblatex}
+
+#+LATEX_HEADER: \usepackage[font=small,labelfont=bf]{caption}
+#+LATEX_HEADER: \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=basictext,factor=1100,stretch=10,shrink=10]{microtype}
+
+#+LATEX_HEADER: \addbibresource{~/.local/data/bibliography/nn.bib}
+#+LATEX_HEADER: \DeclareMathOperator{\sign}{sign}
+
+#+MACRO: tex @@latex:$1@@
+
+$0
+
+* Preface                                                            :ignore:
+
+# Real title and author that will show
+
+#+BEGIN_EXPORT latex
+\title{Adversarial Texts with Gradient Methods}
+
+\author{
+\IEEEauthorblockN{
+  Zhitao Gong\IEEEauthorrefmark{1},
+  Wenlu Wang\IEEEauthorrefmark{1},
+  Bo Li\IEEEauthorrefmark{2},
+  Dawn Song\IEEEauthorrefmark{2},
+  Wei-Shinn Ku\IEEEauthorrefmark{1}}
+
+\IEEEauthorblockA{\IEEEauthorrefmark{1}
+  \texttt{\{gong,wenluwang,weishinn\}@auburn.edu}\\
+  Auburn University, Auburn, AL, USA}
+\IEEEauthorblockA{\IEEEauthorrefmark{2}
+  \texttt{\{crystalboli,dawnsong\}@berkeley.edu}\\
+  University of California, Berkeley, Berkeley, CA, USA}
+}
+#+END_EXPORT
+
+#+LaTeX: \maketitle

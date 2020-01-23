@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: matplotlib
+# key: mpl
+# --
+import matplotlib
+matplotlib.use('Agg')           # noqa: E402
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(w, h))
+gs = fig.add_gridspec(nrow, ncol)
+
+ax = fig.add_subplot(gs[0, 0])
+
+gs.tight_layout(fig)
+plt.savefig('name.png')

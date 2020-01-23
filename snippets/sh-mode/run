@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: run
+# key: run
+# --
+runnable=true
+
+runnable=blaze-out/k8-py3-fastbuild/bin/experimental/deepmind/gongzhitaao
+runnable+=/projects/environment_logger/log_dm_control
+
+cd $(g4 g4d) && $runnable

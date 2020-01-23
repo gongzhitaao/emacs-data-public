@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: title
+# key: ,m.t
+# group: meta
+# --
+#+TITLE: $0

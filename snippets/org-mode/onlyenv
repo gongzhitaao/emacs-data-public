@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: onlyenv
+# key: ,ox.to
+# group: ox
+# --
+#+begin_onlyenv
+$0
+#+end_onlyenv

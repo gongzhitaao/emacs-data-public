@@ -1,0 +1,30 @@
+# -*- mode: snippet -*-
+# name: dm app with flags
+# key: dm_app_flag
+# --
+from absl import flags
+
+from google3.learning.deepmind.python import app
+from google3.learning.deepmind.python import collections
+from google3.learning.deepmind.python import config_flags
+
+config = collections.ConfigDict({
+    'field1': 1,
+    'field2': 'tom',
+    'nested': {
+        'field': 2.23,
+    }
+})
+
+FLAGS = flags.FLAGS
+config_flags.DEFINE_config_dict('config', config)
+
+
+def main(_):
+  config = FLAGS.config
+  print(config)
+  pass
+
+
+if __name__ == '__main__':
+  app.run(main)

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: caption
+# key: ,ox.c
+# group: ox
+# --
+#+CAPTION: $0

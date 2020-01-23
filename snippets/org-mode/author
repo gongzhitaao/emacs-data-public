@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: author
+# key: ,m.a
+# group: meta
+# --
+#+AUTHOR: $0

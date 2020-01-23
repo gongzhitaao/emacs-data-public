@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: usepackage
+# key: ,ox.tu
+# group: ox.tex
+# --
+#+LATEX_HEADER: \usepackage{$1}$0

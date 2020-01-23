@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: attr_latex
+# key: ,ox.ta
+# group: ox.tex
+# --
+#+ATTR_LATEX: $0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: name
+# key: ,ox.n
+# group: ox
+# --
+#+NAME: $0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: subtitle
+# key: ,m.st
+# group: meta
+# --
+#+SUBTITLE: $0

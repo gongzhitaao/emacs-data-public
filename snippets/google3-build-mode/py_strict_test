@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: py_strict_test
+# key: test
+# --
+py_strict_test(
+    name = "${1:name}_test",
+    srcs = ["$1_test.py"],
+    python_version = "PY3",
+    srcs_version = "PY3",  # discouraged
+    deps = [":$1.testonly_lib"],
+)

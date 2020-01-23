@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: LaTeX macros
+# key: ,ox.tm
+# group: ox.tex
+# --
+#+BEGIN_SRC latex-macro
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\sigmoid}{sigmoid}
+\DeclareMathOperator{\sign}{sign}
+\newcommand{\given}{\;\left.\middle|\right.\;}
+#+END_SRC
+$0

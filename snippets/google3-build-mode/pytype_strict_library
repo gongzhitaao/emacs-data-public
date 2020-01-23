@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: pytype_strict_library
+# key: library
+# --
+pytype_strict_library(
+    name = "${1:name}",
+    srcs = ["$1.py"],
+    srcs_version = "PY3",
+    deps = [],
+)

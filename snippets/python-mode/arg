@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: argparse
+# key: arg
+# --
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser(description='TODO')
+    parser.add_argument('--n', metavar='N', type=int)
+    parser.add_argument('--varlist', metavar='N1 [N2 N3 ...]', nargs='+')
+    parser.add_argument('--fixlist', metavar='A B C', nargs='3')
+
+    mut = parser.add_mutually_exclusive_group(required=True)
+    mut.add_argument('--yes', dest='yes', action='store_true', help='TODO')
+    mut.add_argument('--no', dest='yes', action='store_false', help='TODO')
+    parser.set_defaults(mut=False)
+
+    return parser.parse_args()
