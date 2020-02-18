@@ -1,0 +1,45 @@
+# -*- mode: snippet -*-
+# name: xm
+# key: xm
+# --
+"""Xmangaer launch script."""
+
+import collections
+
+from google3.learning.deepmind.python import app
+import google3.learning.deepmind.xmanager as xm
+# from google3.learning.deepmind.xmanager import hyper
+
+
+def main(_):
+  # Key experiment details.
+  description = xm.ExperimentDescription('Hide and Seek | Dummy Play',
+                                         milestone_id=9338)
+
+  executable = xm.BuildTarget(
+      ('//learning/deepmind/research/greenbeard/projects/'
+       'hide_and_seek/analysis:dummy_play'),
+      platform=xm.Platform.CPU,
+      runtime=xm.Borg(cell=xm.Borg.default_cell_selector()),
+      args=collections.OrderedDict([
+          ('config.num_episodes', 2000),
+          ('config.deepfunc_dir', ('/cns/lu-d/home/gongzhitaao/10454768_1'
+                                   '/deepfunc/agent_0/learner_step_0/'))
+      ]),
+  )
+  exploration = xm.ParameterSweep(executable, [{}])
+
+  # # Define an exploration consisting of executables and parameters.
+  # executable = xm.BuildTarget(
+  #     '//learning/deepmind/research/greenbeard/projects/'
+  #     'hide_and_seek/analysis:random_play')
+  # parameters = hyper.product(
+  #     [hyper.sweep('config.num_episode', hyper.discrete([5403]))]),
+  # exploration = xm.ParameterSweep(executable, parameters)
+
+  # Launch experiment on Borg.
+  xm.launch_experiment(description, exploration)
+
+
+if __name__ == '__main__':
+  app.run()

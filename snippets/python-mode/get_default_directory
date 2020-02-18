@@ -1,0 +1,61 @@
+# -*- mode: snippet -*-
+# name: get_default_directory
+# key: get_default_directory
+# --
+from typing import Text
+import tempfile
+import os
+
+from google3.learning.deepmind.storage import cns_utils
+from google3.learning.deepmind.xdata import experiment as xdata_experiment
+from google3.borg.borgletlib.python import pyborgletinfo
+from google3.learning.deepmind.xdata import xm
+from google3.learning.deepmind.xdata import local as xdata_local
+
+def get_default_directory(name: Text,
+                          create: bool = False,
+                          cell: Text = None,
+                          data_id: xdata_experiment.DataId = None) -> Text:
+  """Returns a path to the named directory in the default location.
+
+  If `create=True` the directory will be created using
+  `cns_utils.create_directories`, which automatically sets the following
+  parameters:
+
+    * The permissions will be 0775 (user and group owners can do anything,
+      others can read).
+    * The user will be the user of the current job.
+    * The group will be whichever DeepMind group has the most available quota
+      (one of 'deepmind-resources-colossus' or the current user).
+
+  Args:
+    name: Name of the directory to create.
+    create: Boolean specifying whether to create the directory.
+    cell: CNS cell on which to put the directory. If `None` (default), this will
+      use the current CNS cell. See `cns_utils` for more info.
+    data_id: Experiment for which to get the default directory.  If `None`
+      (default) this will use the currently running process.
+
+  Returns:
+    The default snapshot directory path.
+    * If running under XManager (on Borg or locally) it will be of the form:
+        <cns_home_directory>/<name>/<xid>/<wid>/<rid>/
+    * If running on Borg but not using XManager, it will be of the form:
+        <cns_home_directory>/<name>/<random_uuid>/0/0/
+    * If running locally and not using XManager, it will be of the form:
+        <temp_dir>/<name>/<random_uuid>/0/0/
+  """
+  try:
+    data_id = data_id or xm.get_data_id(allow_local_run=False)
+    using_xmanager = True
+  except ValueError:
+    data_id = xdata_local.generate_on_disk_data_id()
+    using_xmanager = False
+
+  if cell is not None:
+    cell = '{}-d'.format(cell)  # Corresponding CNS cell name.
+
+  if using_xmanager or pyborgletinfo.RunningUnderBorglet():
+    base_dir = cns_utils.default_home_directory(cell=cell)
+  else:
+    base_dir = tempfile.gettempdir()
