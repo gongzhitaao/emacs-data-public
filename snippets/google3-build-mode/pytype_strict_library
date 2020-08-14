@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: pytype_strict_library
-# key: library
+# key: py.library
 # --
 pytype_strict_library(
     name = "${1:name}",

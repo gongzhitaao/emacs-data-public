@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: load
-# key: load
+# name: py.load
+# key: py.load
 # --
 load(
     "//devtools/python/blaze:pytype.bzl",

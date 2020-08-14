@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: cc_binary
+# key: cc.binary
+# --
+cc_binary(
+  name = "${1:name}",
+  srcs = ["$1.py"],
+)

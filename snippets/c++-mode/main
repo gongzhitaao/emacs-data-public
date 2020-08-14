@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: main.cc
+# key: main.cc
+# --
+// TODO(gongzhitaao): Description!
+
+#include "base/init_google.h"
+#include "base/logging.h"
+
+int main(int argc, char** argv) {
+  InitGoogle(argv[0], &argc, &argv, true);
+  return 0;
+}

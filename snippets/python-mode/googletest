@@ -3,18 +3,32 @@
 # key: googletest
 # --
 # python3
-"""Tests for action class."""
+"""Tests for TODO(gongzhitaao)."""
+import tempfile
+
+from absl import flags
 
 from google3.testing.pybase import googletest
 # from google3.testing.pybase import parameterized
 
+FLAGS = flags.FLAGS
 
-# class ${1:name}Test(parameterized.TestCase):
-class $1Test(googletest.TestCase):
 
-  # @classmethod
-  # def setUpClass(cls):
-  #   pass
+# class FixIndexTest(parameterized.TestCase):
+class FixIndexTest(googletest.TestCase):
+
+  @classmethod
+  def setUpClass(cls):
+    super().setUpClass()
+
+  def setUp(self):
+    super().setUp()
+    self._temp_dir = tempfile.TemporaryDirectory(dir=FLAGS.test_tmpdir)
+    self._data_dir = self._temp_dir.name
+
+  def tearDown(self):
+    self._temp_dir.cleanup()
+    super().tearDown()
 
   @parameterized.named_parameters(
       ('0b00011', 0b00011, ((-1, 0), 1, 1)),
