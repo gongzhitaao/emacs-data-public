@@ -1,14 +1,18 @@
 # -*- mode: snippet -*-
-# name: main.cc
-# key: main.cc
+# name: flume main
+# key: flume.main
 # --
-// TODO(gongzhitaao): Description!
+// TODO(gongzhitaao): Describe me!
 
 #include "base/init_google.h"
 #include "base/logging.h"
-#include "third_party/absl/flags/flag.h"
+#include "pipeline/flume/public/flume.h"
+
+void Run() {}
 
 int main(int argc, char** argv) {
   InitGoogle(argv[0], &argc, &argv, true);
+  flume::Flume flume;
+  Run();
   return 0;
 }

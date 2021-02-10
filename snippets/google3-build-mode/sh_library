@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: sh.library
+# key: sh.library
+# --
+# https://g3doc.corp.google.com/devtools/blaze/g3doc/be/build-encyclopedia.html#sh_library
+sh_library(
+    name = "${1:name}",
+    srcs = ["$1.sh"],
+    deps = ["//util/shell/gbash"],
+    data = [],
+)

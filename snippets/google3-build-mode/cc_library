@@ -4,5 +4,6 @@
 # --
 cc_library(
     name = "${1:name}",
-    srcs = ["$1.py"],
+    srcs = ["$1.cc"],
+    hdrs = ["$1.h"],
 )

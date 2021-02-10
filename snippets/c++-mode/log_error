@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: log_error
+# key: le
+# --
+LOG(ERROR) <<
