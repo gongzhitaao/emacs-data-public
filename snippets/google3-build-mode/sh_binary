@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: sh.binary
-# key: sh.binary
+# key: sh.bin
 # --
 # https://g3doc.corp.google.com/devtools/blaze/g3doc/be/build-encyclopedia.html#sh_binary
 sh_binary(

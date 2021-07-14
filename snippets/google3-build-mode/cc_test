@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: cc_test
+# key: cc.test
+# --
+cc_test(
+    name = "${1:name}_test",
+    srcs = ["$1_test.cc"],
+)

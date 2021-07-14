@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: pytype_strict_binary
-# key: py.binary
+# key: py.bin
 # --
 pytype_strict_binary(
   name = "${1:name}",

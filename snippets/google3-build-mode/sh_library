@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: sh.library
-# key: sh.library
+# key: sh.lib
 # --
 # https://g3doc.corp.google.com/devtools/blaze/g3doc/be/build-encyclopedia.html#sh_library
 sh_library(

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: property
+# key: ,m.p
+# group: meta
+# --
+#+PROPERTY: $0
